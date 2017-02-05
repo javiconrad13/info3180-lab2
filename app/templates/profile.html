@@ -1,8 +1,90 @@
 {% extends "base.html" %}
 
 {% block main %}
-<h1 class="page-header">About</h1>
-<p>This webpage is about {{ name }}.</p>
-<p>The date is {{ time }}</p>
-<img src={{ url_for('static', filename = "Red-Panda.png") }}/>
+<head>
+    <style>
+        body {
+            font-family: "arial";
+              margin-left: auto ;
+              margin-right: auto ;
+        }
+    
+        h1 {
+            border-bottom: 2px solid lightgrey;
+        }
+        
+        photo {
+             border-radius: 5px;   
+             border: 1px solid grey;
+             padding-top: 5px;
+             padding-right: 5px;
+             padding-bottom: 5px;
+             padding-left: 5px;
+             float:left;
+        }
+
+        img{
+           width:200px;
+           height:200px;
+            
+        }
+
+        ul {
+            list-style-type:none;
+            
+        }
+        
+        p1{
+            background-color: lightgrey;
+            padding-left:20px;
+        }
+
+        #container{
+            position: relative;
+            background-color: lightgrey;
+            border: 1px solid grey;
+            margin-bottom: 200px;
+            margin-right: 450px;
+            margin-left: 220px;
+            border-radius: 5px;
+            padding-bottom: 300px;
+            padding-top:10px;
+        }
+        
+        #about{
+            background:white;
+            width : 468px;
+            height: 289px;
+            position: absolute; 
+            transform: translate(0px,10px);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        Profile
+    </h1>
+    <photo>
+        <img src={{ url_for('static', filename = "Red-Panda.png") }}/>
+    </photo>
+    
+<div id="container">
+<p1>
+     {{ name }}
+</p1>
+
+<div id="about" >
+<p style="margin-left:20px;border-bottom:1px solid lightgrey;margin-right:20px;padding-bottom:10px;"> Today's date is {{ time }}}</p>
+   <ul style="margin-left:20px;border-bottom:1px solid lightgrey;margin-right:20px;padding-bottom:10px;">
+         <li><b>Username:</b> Jav13</li>
+         <li><b>ID Number:</b> 620066</li>
+         <li><b>Age:</b> 22</li>
+         <li><b>Gender:</b> Male</li>
+   </ul>
+<p style="margin-left:20px;"> Welcome to my page</p>
+</div>
+
+</body>
 {% endblock %}
